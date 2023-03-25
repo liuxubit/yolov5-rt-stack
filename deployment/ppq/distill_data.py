@@ -34,8 +34,8 @@ def main():
         default="./distilled_data/",
         help="The path of calibration data, if zeroq is not used, you should set it",
     )
-    parser.add_argument("--distill_iterations", type=int, default=50, help="distill iterations")
-    parser.add_argument("--num_batches", type=int, default=10, help="num of batches")
+    parser.add_argument("--distill_iterations", type=int, default=200, help="distill iterations")
+    parser.add_argument("--num_batches", type=int, default=100, help="num of batches")
 
     args = parser.parse_args()
     print(f"Command Line Args: {args}")

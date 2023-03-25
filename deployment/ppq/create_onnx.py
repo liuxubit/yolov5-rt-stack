@@ -90,8 +90,8 @@ def main():
     parser.add_argument("--input_size", default=[3, 640, 640], type=int, help="input size")
     parser.add_argument("--opset_version", type=int, default=11, help="opset version")
     parser.add_argument("--onnx_input_name", type=str, default="dummy_input", help="onnx input name")
-    parser.add_argument("--onnx_output_name", type=str, default="dummy_output", help="onnx output name")
-    parser.add_argument("--onnx_output_path", type=str, default="yolov5.onnx", help="onnx output name")
+    parser.add_argument("--onnx_output_name", type=str, default=["dummy_output_0", "dummy_output_1", "dummy_output_2" ], help="onnx output name")
+    parser.add_argument("--onnx_output_path", type=str, default="./model/yolov5s.onnx", help="onnx output name")
 
     args = parser.parse_args()
 
@@ -113,7 +113,8 @@ def main():
         args.opset_version,
         do_constant_folding=False,
         input_names=[args.onnx_input_name],
-        output_names=[args.onnx_output_name],
+        output_names=args.onnx_output_name,
+        # output_names=["dummy_output_0", "dummy_output_1", "dummy_output_2" ],
     )
 
 

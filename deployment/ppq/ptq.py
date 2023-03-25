@@ -54,7 +54,7 @@ def main():
 
     sim_onnx_output_name = "sim_float_yolov5.onnx"
     quantized_onnx_output_name = "quantized_float_yolov5.onnx"
-    quantized_json_output_name = "quantized_json_yolov5.onnx"
+    quantized_json_output_name = "quantized_yolov5.json"
 
     print(f"Command Line Args: {args}")
 
